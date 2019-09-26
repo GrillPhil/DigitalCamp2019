@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     ReactiveFormsModule,
     MatToolbarModule,
     MatCardModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

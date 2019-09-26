@@ -19,7 +19,7 @@
         </button>
         <mat-hint>Position per GPS erkannt</mat-hint>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
         <input type="text" placeholder="Fahrzeug" matInput [value]="vehicle.value.name" [formControl]="vehicle" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let vehicle of vehicles" [value]="vehicle">
