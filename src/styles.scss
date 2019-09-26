@@ -4,6 +4,39 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
+$smartcitypforzheim-palette: (
+    50 : #edf8fb,
+    100 : #d1eef6,
+    200 : #b3e3f0,
+    300 : #94d7e9,
+    400 : #7dcfe5,
+    500 : #66c6e0,
+    600 : #5ec0dc,
+    700 : #53b9d8,
+    800 : #49b1d3,
+    900 : #38a4cb,
+    A100 : #ffffff,
+    A200 : #e2f7ff,
+    A400 : #afe9ff,
+    A700 : #96e2ff,
+    contrast: (
+        50 : #fff,
+        100 : #fff,
+        200 : #fff,
+        300 : #fff,
+        400 : #fff,
+        500 : #fff,
+        600 : #fff,
+        700 : #fff,
+        800 : #fff,
+        900 : #fff,
+        A100 : #fff,
+        A200 : #fff,
+        A400 : #fff,
+        A700 : #fff,
+    )
+);
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -12,7 +45,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$fahrtenbuch-primary: mat-palette($mat-indigo);
+$fahrtenbuch-primary: mat-palette($smartcitypforzheim-palette);
 $fahrtenbuch-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -27,6 +60,8 @@ $fahrtenbuch-theme: mat-light-theme($fahrtenbuch-primary, $fahrtenbuch-accent, $
 @include angular-material-theme($fahrtenbuch-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+$accent: #66C6E0;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

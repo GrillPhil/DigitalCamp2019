@@ -1,0 +1,37 @@
+@import '../../styles.scss';
+
+.spacer {
+    flex: 1;
+}
+mat-toolbar button {
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+mat-card {
+    margin: 16px;
+}
+mat-card-header {
+    background: rgba($accent, 0.2);
+    margin: -16px -16px 0 -16px !important;
+    border-radius: 4px 4px 0 0;
+}
+mat-card-title {
+    margin: 12px 0;
+}
+mat-card-content button {
+    display: block;
+    margin: 16px auto 0 auto;
+}
+
+table {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    border-spacing: 0;
+}
+td {
+    padding: 16px;
+    border-bottom: 1px solid silver;
+}
+td:last-of-type {
+    text-align: right;
+}

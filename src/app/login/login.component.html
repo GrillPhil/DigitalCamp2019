@@ -1,3 +1,17 @@
-<h1>Login</h1>
+<div class="canvas">
+    <h1 class="subtle">Fahrtenbuch</h1>
+    <h1>Login</h1>
 
-<button mat-raised-button color="primary" routerLink="/dashboard">Login</button>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Benutzername" [formControl]="username">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Passwort" type="password" [formControl]="password">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="login()">Login</button>
+    <div class="error">{{error}}</div>
+
+    <img src="assets/logo.svg" alt="Logo" >
+</div>

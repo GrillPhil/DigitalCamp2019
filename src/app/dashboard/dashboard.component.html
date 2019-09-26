@@ -1,5 +1,33 @@
-<h1>Übersicht</h1>
+<mat-toolbar color="primary">
+    Übersicht
+    <span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
 
-<button id="cta" mat-fab aria-label="Neue Fahrt" routerLink="/starttrip">
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Letzte Fahrten</mat-card-title>
+        <span class="spacer"></span>
+        <button mat-button aria-label="Fahrten exportieren">
+            <mat-icon>save_alt</mat-icon>
+        </button>
+    </mat-card-header>
+    <mat-card-content>
+        <table>
+            <tr *ngFor="let drive of recentDrives">
+                <td>{{drive.start | date:'dd.MM.yyyy HH:mm'}}</td>
+                <td>{{drive.licensePlate}}</td>
+                <td>{{drive.distance}} km</td>
+            </tr>
+        </table>
+
+        <button mat-stroked-button color="primary">Alle anzeigen</button>
+
+    </mat-card-content>
+</mat-card>
+
+<button id="cta" color="primary" mat-fab aria-label="Neue Fahrt" routerLink="/starttrip">
     <mat-icon>add</mat-icon>
 </button>

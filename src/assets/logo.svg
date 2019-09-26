@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176.26" height="31.59" viewBox="0 0 176.26 31.59">
+  <g id="Gruppe_3" data-name="Gruppe 3" transform="translate(-68.075 -379.653)">
+    <path id="Pfad_1005" data-name="Pfad 1005" d="M132.988,411.067V379.792h22.736v4.434H137.676v10.643h15.643v4.43H137.676v11.769Z" transform="translate(-38.328 -0.082)" fill="#fff"/>
+    <path id="Pfad_1006" data-name="Pfad 1006" d="M79.8,384.483a8.776,8.776,0,0,1,5.493,1.536,4.35,4.35,0,0,1,1.544,3.6,4.424,4.424,0,0,1-1.827,3.836,9.842,9.842,0,0,1-5.759,1.416H72.766V384.483H79.8m0-4.691H68.075v31.275h4.691V399.56h6.487a14.3,14.3,0,0,0,8.572-2.351,9.121,9.121,0,0,0,3.7-7.591,9,9,0,0,0-3.266-7.23,13.191,13.191,0,0,0-8.462-2.6Z" transform="translate(0 -0.082)" fill="#fff"/>
+    <path id="Pfad_1007" data-name="Pfad 1007" d="M233.171,379.653H201.764v31.408h31.407Zm-30.36,30.36V393.578l13.149,16.436Zm14.133-.446L202.811,391.9V381.8l14.133,17.667Zm0-11.777L203.272,380.7h13.672Zm15.18,12.223H217.991v-6.281h14.133Zm0-7.328H217.991v-6.8h14.133Zm0-7.852H217.991v-6.8h14.133Zm0-7.852H217.991V380.7h14.133Z" transform="translate(-78.938)" fill="#fff"/>
+    <text id="Technische_Dienste" data-name="Technische
+Dienste" transform="translate(168.335 392.243)" fill="#fff" font-size="15" font-family="Helvetica"><tspan x="0" y="0">Technische</tspan><tspan x="0" y="16">Dienste</tspan></text>
+  </g>
+</svg>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Drive } from '../drive.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  recentDrives: Drive[];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.recentDrives = this.dataService.getRecentDrives();
   }
 
 }

@@ -1,8 +1,45 @@
-<h1>Neue Fahrt</h1>
-<button mat-button aria-label="Zurück" routerLink="/dashboard">
-    <mat-icon>arrow_back</mat-icon>
-</button>
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/dashboard">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Neue Fahrt
+</mat-toolbar>
 
-<button id="cta" mat-fab aria-label="Weiter" routerLink="/starttripreason">
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Fahrer" [formControl]="driver">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Start Datum & Uhrzeit" type="datetime" [value]="start.value | date:'dd.MM.yyyy HH:mm'" [formControl]="start">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Start Ort" [formControl]="startLocation">
+        <button mat-button matSuffix mat-icon-button aria-label="GPS location">
+            <mat-icon>my_location</mat-icon>
+        </button>
+        <mat-hint>Position per GPS erkannt</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Fahrzeug" matInput [value]="vehicle.value.name" [formControl]="vehicle" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let vehicle of vehicles" [value]="vehicle">
+                <strong>{{vehicle.licensePlate}}</strong> | {{vehicle.name}} ({{vehicle.mileage}} km)
+            </mat-option>
+        </mat-autocomplete>
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>Fahrzeug wählen oder QR Code scannen</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Start KM-Stand" [formControl]="startMileage">
+        <button mat-button matSuffix mat-icon-button aria-label="Take Photo">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>KM-Stand fotografieren oder manuell eingeben</mat-hint>
+    </mat-form-field>
+</form>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" routerLink="/starttripreason">
     <mat-icon>arrow_forward</mat-icon>
 </button>

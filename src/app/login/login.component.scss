@@ -1,0 +1,41 @@
+@import '../../styles.scss';
+
+mat-form-field {
+    width: 100%;
+}
+form {
+    margin: 0 16px;
+}
+h1 {
+    margin: 0 16px 16px 16px;
+}
+h1.subtle {
+    opacity: .5;
+    margin: 72px 16px 0 16px;
+}
+button {
+    margin: 0 16px;
+    background: white !important;
+    color: $accent !important;
+}
+.error{
+    color: red;
+    margin: 16px;
+}
+
+.canvas {
+    background: $accent;
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    color: #fff;
+}
+.canvas img {
+    position: fixed;
+    bottom:72px;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
