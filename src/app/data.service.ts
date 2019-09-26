@@ -10,8 +10,15 @@ export class DataService {
 
   constructor() { }
 
-  getVehicles(): Vehicle[]
-  {
+  getReasons(): string[] {
+    return [
+      'Werkstattfahrt',
+      'Schneeräumen',
+      'Baustelle Anfahrt'
+    ];
+  }
+
+  getVehicles(): Vehicle[] {
     return [
       {
         id: '1',

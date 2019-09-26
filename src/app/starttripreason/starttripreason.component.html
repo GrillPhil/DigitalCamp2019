@@ -1,7 +1,18 @@
-<h1>Fahrtgrund wählen</h1>
-<button mat-button aria-label="Zurück" routerLink="/starttrip">
-    <mat-icon>arrow_back</mat-icon>
-</button>
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/starttrip">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Fahrtgrund wählen
+</mat-toolbar>
+
+<mat-nav-list>
+    <mat-list-item *ngFor="let r of reasons; let i = index">
+        <mat-radio-button [value]="i" (change)="selection = $event.value">
+            {{r}}
+        </mat-radio-button>
+        <mat-icon *ngIf="selection == i">check</mat-icon>
+    </mat-list-item>
+</mat-nav-list>
 
 <button id="cta" color="primary" mat-fab aria-label="Weiter" routerLink="/indrive">
     <mat-icon>check</mat-icon>

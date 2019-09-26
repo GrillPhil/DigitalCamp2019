@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-starttripreason',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarttripreasonComponent implements OnInit {
 
-  constructor() { }
+  reasons: string[];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.reasons = this.dataService.getReasons();
   }
 
 }
