@@ -23,6 +23,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatAutocompleteModule,
     HttpClientModule,
     MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

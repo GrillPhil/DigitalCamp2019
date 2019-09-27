@@ -1,3 +1,32 @@
-<h1>Fahrt läuft</h1>
+<div class="canvas">
+    <header>
+        <h1>Fahrt läuft</h1>
+        <mat-spinner class="light" diameter="50"></mat-spinner>
+    </header>
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+    <footer>
+        <table>
+            <tr>
+                <td>Fahrtzeit</td>
+                <td>{{elapsedTimeInSeconds}}</td>
+            </tr>
+            <tr>
+                <td>Fahrtstrecke</td>
+                <td>{{distance}} km</td>
+            </tr>
+            <tr>
+                <td>Fahrer</td>
+                <td>{{driver}}</td>
+            </tr>
+            <tr>
+                <td>Fahrzeug</td>
+                <td>{{vehicle.licensePlate}} {{vehicle.name}}</td>
+            </tr>
+        </table>
 
-<button mat-raised-button color="primary" routerLink="/endtrip">Fahrt beenden</button>
+        <button mat-raised-button color="primary" routerLink="/endtrip">Fahrt beenden</button>
+
+    </footer>
+</div>

@@ -80,3 +80,6 @@ mat-radio-button {
 .mat-radio-container {
     display: none !important;
 }
+.light.mat-progress-spinner circle, .light.mat-spinner circle{
+    stroke: white !important;
+}

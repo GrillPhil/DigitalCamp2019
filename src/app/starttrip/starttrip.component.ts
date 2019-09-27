@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Vehicle } from '../vehicle.model';
 import { DataService } from '../data.service';
 import { GeocodeService } from '../geocode.service';
+import { LocationService } from '../location.service';
 
 @Component({
   selector: 'app-starttrip',
@@ -19,7 +20,9 @@ export class StarttripComponent implements OnInit {
 
   vehicles: Vehicle[];
 
-  constructor(private dataService: DataService, private geocodeService: GeocodeService) { }
+  constructor(private dataService: DataService, 
+              private geocodeService: GeocodeService, 
+              private locationService: LocationService) { }
 
   ngOnInit() {
     this.driver.setValue("Philipp");
@@ -28,6 +31,10 @@ export class StarttripComponent implements OnInit {
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
+        this.locationService.currentLocation = {
+          lat: position.coords.latitude,
+          lon: position.coords.longitude
+        };
         this.geocodeService.getAddressFromCoordinate(position.coords.latitude, position.coords.longitude).subscribe(result => {
           this.startLocation.setValue(result.Response.View["0"].Result["0"].Location.Address.Label);
         });

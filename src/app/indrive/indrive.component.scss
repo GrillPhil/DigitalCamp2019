@@ -1,0 +1,51 @@
+@import '../../styles.scss';
+
+.canvas {
+    background: $accent;
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+mat-spinner {
+    margin: 16px auto;
+}
+button {
+    margin: 24px auto;
+    background: white !important;
+    color: $accent !important;
+    display: block;
+}
+.map-container {
+    height: 100%;
+    width:100%;
+    position: relative;
+}
+#map {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+table {
+    margin: 24px 0;
+    width: 100%;
+    border-spacing: 0;
+}
+td {
+    padding: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+td:first-of-type {
+    text-align: right;    
+}
+td:last-of-type {
+    text-align: left;
+    font-weight: bold;
+}
