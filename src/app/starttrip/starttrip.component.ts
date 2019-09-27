@@ -66,12 +66,13 @@ export class StarttripComponent implements OnInit {
     this._newDrive.driver = this.driver.value;
     this._newDrive.start = this.start.value;
     this._newDrive.vehicle = this.vehicle.value;
-
-    if (this._newDrive.vehicle) {
-      this._newDrive.startMileage = this._newDrive.vehicle.mileage;
-    }
+    this._newDrive.startMileage = this.startMileage.value;
 
     this.driveService.create(this._newDrive);
     this.router.navigate(['starttripreason']);
+  }
+
+  vehicleSelected() {
+    this.startMileage.setValue(this.vehicle.value.mileage);
   }
 }

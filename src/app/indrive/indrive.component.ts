@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LocationService } from '../location.service';
 import { Vehicle } from '../vehicle.model';
+import { DriveService } from '../drive.service';
+import { Router } from '@angular/router';
 
 declare var ol: any;
 
@@ -11,7 +12,8 @@ declare var ol: any;
 })
 export class IndriveComponent implements OnInit {
 
-  constructor(private locationService: LocationService) { }
+  constructor(private driveService: DriveService,
+              private router: Router) { }
 
   map: any;
   elapsedTimeInSeconds: number;
@@ -23,13 +25,11 @@ export class IndriveComponent implements OnInit {
 
     this.elapsedTimeInSeconds = 0;
     this.distance = 0;
-    this.driver = 'Philipp';
-    this.vehicle = {
-      id: '1',
-      licensePlate: 'PF-SP 2019',
-      mileage: 99000,
-      name: 'Schneepflug'
-    }
+
+    let currentDrive = this.driveService.get();
+
+    this.driver = currentDrive.driver;
+    this.vehicle = currentDrive.vehicle;
     
     this.simulate();
 
@@ -41,8 +41,8 @@ export class IndriveComponent implements OnInit {
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([this.locationService.currentLocation.lon, 
-                                    this.locationService.currentLocation.lat]),
+        center: ol.proj.fromLonLat([currentDrive.startLocation.lon, 
+                                    currentDrive.startLocation.lat]),
         zoom: 13
       })
     });
@@ -56,4 +56,17 @@ export class IndriveComponent implements OnInit {
     }, 1000);
   }
 
+  end() {
+    this.driveService.updateDistance(this.distance);
+    this.driveService.updateEnd(new Date());
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.driveService.updateEndLocation({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude
+        });
+        this.router.navigate(['endtrip']);
+      });
+    }    
+  }
 }
