@@ -3,7 +3,9 @@ import { FormControl } from '@angular/forms';
 import { Vehicle } from '../vehicle.model';
 import { DataService } from '../data.service';
 import { GeocodeService } from '../geocode.service';
-import { LocationService } from '../location.service';
+import { DriveService } from '../drive.service';
+import { Drive } from '../drive.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-starttrip',
@@ -20,18 +22,36 @@ export class StarttripComponent implements OnInit {
 
   vehicles: Vehicle[];
 
+  private _newDrive: Drive;
+
   constructor(private dataService: DataService, 
               private geocodeService: GeocodeService, 
-              private locationService: LocationService) { }
+              private driveService: DriveService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.driver.setValue("Philipp");
-    this.start.setValue(new Date());
+
+    this._newDrive = {
+      distance: 0,
+      driver: 'Philipp',
+      end: null,
+      endLocation: null,
+      endMileage: null,
+      id: null,
+      reason: null,
+      start: new Date(),
+      startLocation: null,
+      startMileage: null,
+      vehicle: null
+    };
+
+    this.driver.setValue(this._newDrive.driver);
+    this.start.setValue(this._newDrive.start);
     this.vehicles = this.dataService.getVehicles();
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.locationService.currentLocation = {
+        this._newDrive.startLocation = {
           lat: position.coords.latitude,
           lon: position.coords.longitude
         };
@@ -40,5 +60,18 @@ export class StarttripComponent implements OnInit {
         });
       });
     }
+  }
+
+  next() {
+    this._newDrive.driver = this.driver.value;
+    this._newDrive.start = this.start.value;
+    this._newDrive.vehicle = this.vehicle.value;
+
+    if (this._newDrive.vehicle) {
+      this._newDrive.startMileage = this._newDrive.vehicle.mileage;
+    }
+
+    this.driveService.create(this._newDrive);
+    this.router.navigate(['starttripreason']);
   }
 }

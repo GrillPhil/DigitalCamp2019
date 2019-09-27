@@ -50,12 +50,11 @@ export class DataService {
         end: new Date(),
         endLocation: new Location(),
         endMileage: 99058,
-        licensePlate: 'PF-SP 2019',
         reason: 'Werkstattfahrt',
         start: new Date(),
         startLocation: new Location(),
         startMileage: 99000,
-        vehicleDescription: 'Sprinter'
+        vehicle: this.getVehicles()[0]
       },
       {
         id: 'test2',
@@ -64,12 +63,11 @@ export class DataService {
         end: new Date(),
         endLocation: new Location(),
         endMileage: 99058,
-        licensePlate: 'PF-SP 2019',
         reason: 'Werkstattfahrt',
         start: new Date(),
         startLocation: new Location(),
         startMileage: 99000,
-        vehicleDescription: 'Sprinter'
+        vehicle: this.getVehicles()[1]
       },
       {
         id: 'test3',
@@ -78,12 +76,11 @@ export class DataService {
         end: new Date(),
         endLocation: new Location(),
         endMileage: 99058,
-        licensePlate: 'PF-SP 2019',
         reason: 'Werkstattfahrt',
         start: new Date(),
         startLocation: new Location(),
         startMileage: 99000,
-        vehicleDescription: 'Sprinter'
+        vehicle: this.getVehicles()[2]
       }
     ];
   }
