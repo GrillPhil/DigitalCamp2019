@@ -36,4 +36,8 @@ export class DriveService {
   updateEndLocation(location: Location) {
     this._currentDrive.endLocation = location;
   }
+
+  updateEndMileage(mileage: any) {
+    this._currentDrive.endMileage = mileage;
+  }
 }

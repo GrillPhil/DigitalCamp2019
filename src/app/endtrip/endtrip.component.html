@@ -1,8 +1,26 @@
-<h1>Fahrt beenden</h1>
-<button mat-button aria-label="Zurück" routerLink="/indrive">
-    <mat-icon>arrow_back</mat-icon>
-</button>
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/indrive">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Fahrt beenden
+</mat-toolbar>
 
-<button id="cta" color="primary" mat-fab aria-label="Weiter" routerLink="/dashboard">
+<form>
+    <mat-form-field>
+        <input matInput placeholder="End KM-Stand" [formControl]="endMileage">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" placeholder="Fahrtgrund" matInput [value]="reason.value" 
+            [formControl]="reason"
+            [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let r of reasons" [value]="r">
+                {{r}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="save()">
     <mat-icon>check</mat-icon>
 </button>
