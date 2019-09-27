@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-scan',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScanComponent implements OnInit {
 
+  @Output() closed = new EventEmitter<boolean>();
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  close() {
+    this.closed.emit(false);
   }
 
 }

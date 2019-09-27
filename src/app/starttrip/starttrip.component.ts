@@ -21,6 +21,7 @@ export class StarttripComponent implements OnInit {
   startMileage = new FormControl('');
 
   vehicles: Vehicle[];
+  showScanner = false;
 
   private _newDrive: Drive;
 

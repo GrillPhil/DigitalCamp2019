@@ -26,7 +26,8 @@
                 <strong>{{vehicle.licensePlate}}</strong> | {{vehicle.name}} ({{vehicle.mileage}} km)
             </mat-option>
         </mat-autocomplete>
-        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code">
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code" 
+                (click)="showScanner = true; $event.stopPropagation();">
             <mat-icon>camera_alt</mat-icon>
         </button>
         <mat-hint>Fahrzeug wählen oder QR Code scannen</mat-hint>
@@ -43,3 +44,5 @@
 <button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="next()">
     <mat-icon>arrow_forward</mat-icon>
 </button>
+
+<app-scan *ngIf="showScanner" (closed)="showScanner = false"></app-scan>

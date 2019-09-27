@@ -27,10 +27,6 @@ const routes: Routes = [
     component: StarttripComponent
   },
   {
-    path: 'scan',
-    component: ScanComponent
-  },
-  {
     path: 'starttripreason',
     component: StarttripreasonComponent
   },
