@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,12 @@ import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import { TimePipe } from './time.pipe';
+
+registerLocaleData(localeDe, 'de');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +40,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ScanComponent,
     StarttripreasonComponent,
     IndriveComponent,
-    EndtripComponent
+    EndtripComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,

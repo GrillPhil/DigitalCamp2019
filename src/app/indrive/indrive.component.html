@@ -10,11 +10,11 @@
         <table>
             <tr>
                 <td>Fahrtzeit</td>
-                <td>{{elapsedTimeInSeconds}}</td>
+                <td>{{elapsedTimeInSeconds | time }}</td>
             </tr>
             <tr>
                 <td>Fahrtstrecke</td>
-                <td>{{distance}} km</td>
+                <td>{{distance | number : '0.3-3':'de'}} km</td>
             </tr>
             <tr>
                 <td>Fahrer</td>
