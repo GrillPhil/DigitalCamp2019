@@ -21,7 +21,7 @@
     </mat-form-field>
     <mat-form-field>
         <input type="text" placeholder="Fahrzeug" matInput [value]="vehicle.value.name" [formControl]="vehicle" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="vehicleSelected()">
             <mat-option *ngFor="let vehicle of vehicles" [value]="vehicle">
                 <strong>{{vehicle.licensePlate}}</strong> | {{vehicle.name}} ({{vehicle.mileage}} km)
             </mat-option>
